@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08090d">
+<meta name="description" content="Başka İstanbul Yok: Ataşehir'in üst halkası. Modern Ataşehir'in çatısından atla; Watergarden'a, Finanskent'e ya da Maltepe sahile uç, yeni hayatının kapılarını aç.">
+<title>BAŞKA İSTANBUL YOK · Ataşehir'in üst halkası</title>
+<link rel="stylesheet" href="halka.css">
+<link rel="alternate" type="application/json" href="gpt.json" title="GPT kullanım sözleşmesi">
+<script src="sayfa.js" defer></script>
+<script src="ucus.js" defer></script>
+</head>
+<body data-kip="sec">
+<a class="atla" href="#ana">İçeriğe geç</a>
+<header class="ust">
+  <p class="marka">BAŞKA <b>İSTANBUL</b> YOK</p>
+  <nav aria-label="Ana gezinme">
+    <a href="#kapi">Yaşam kapısı</a>
+    <a href="#iplik">İplikler</a>
+    <a href="#halka">Halkalar</a>
+  </nav>
+</header>
+
+<main id="ana">
+  <section class="sahne" aria-label="Üç boyutlu uçuş sahnesi">
+    <canvas id="ucus3d" aria-label="3B Ataşehir. Bir bloktan atla; ok tuşları, WASD ya da parmağınla süzül."></canvas>
+
+    <div class="giris" id="giris">
+      <p class="ust-not">Ataşehir'in üst halkası</p>
+      <h1>Çatıdan atla.<br><em>Başka İstanbul yok.</em></h1>
+      <p>Modern Ataşehir'in üç bloğu, üç yön. Taşındığın gün şehir sana üç kapı açar: çarşı ve terzi, iş ve fırsat, sahil ve sahne.</p>
+      <div class="atlayis" id="atlayis" role="group" aria-label="Atlayış seç"></div>
+    </div>
+
+    <div class="hud" id="hud" hidden>
+      <p class="hud-hedef"><span id="hud-blok"></span> → <b id="hud-ad"></b></p>
+      <p class="hud-halka">Halka <b id="hud-sayi">0</b> / 6</p>
+      <p class="hud-iplik" id="hud-iplik"></p>
+      <p class="hud-ipucu">Ok tuşları · WASD · parmağını sürükle</p>
+      <button type="button" class="dugme kucuk" id="vazgec">Vazgeç</button>
+    </div>
+
+    <aside class="varis" id="varis" hidden aria-live="polite">
+      <p class="ust-not" id="varis-ust"></p>
+      <h2 id="varis-ad"></h2>
+      <p id="varis-ozet"></p>
+      <ul id="varis-kapilar"></ul>
+      <div class="dugmeler"><a class="dugme ana" href="#kapi" id="varis-talep">Talep hazırla</a><button type="button" class="dugme" id="tekrar">Başka bloktan atla</button></div>
+    </aside>
+    <p class="durum" id="durum" role="status"></p>
+  </section>
+
+  <section class="bolum" id="kapi" aria-labelledby="kapi-baslik">
+    <p class="ust-not">Yeni taşınan için</p>
+    <h2 id="kapi-baslik">Yaşam kapısı</h2>
+    <p>Dört site, tek hayat. Bugün her kapı bir talep taslağı hazırlar; müsaitlik takvimi, randevu ve ödeme sistemi henüz bağlı değil. Hazırladığın not sunucuya gönderilmez.</p>
+    <div class="kapilar">
+      <article><b>Moda · Terzi</b><h3>Online terzim müsait mi?</h3><p>Ölçü ve prova talebini hazırla; tasarımcı stüdyosu ve canlı podyum afair sitelerinde.</p><p class="baglar"><a href="https://www.afair.studio/dokun/">kumaşa dokun ↗</a><a href="https://www.afair.live/">afair.live ↗</a></p></article>
+      <article><b>Tarım · Danışman</b><h3>Tarım danışmanımdan nasıl randevu alırım?</h3><p>Ürünün, arazin ve sorunla bir talep yaz; tarım sözlüğü ve takvim tarim.online'da.</p><p class="baglar"><a href="https://www.tarim.online/">tarim.online ↗</a></p></article>
+      <article><b>Bina · Elektronik</b><h3>Dairemde teknik destek</h3><p>Blok, kat ve daireni seçip ihtiyacını yaz; bina modeli Modern Ataşehir'de.</p><p class="baglar"><a href="https://www.xn--modernataehir-qtc.com/bina">modernataşehir.com ↗</a></p></article>
+      <article><b>Şehir · Sanat</b><h3>Mahallede ne var?</h3><p>Yaya, ortak alan, konser ve buluşma önerilerin şehir pilotuna gider.</p><p class="baglar"><a href="https://www.xn--ataehirmodern-ktc.com/sehir">ataşehirmodern.com ↗</a></p></article>
+    </div>
+
+    <form class="form" id="talep" novalidate>
+      <label>Konu<select id="t-konu">
+        <option>Terzi: ölçü ve prova</option><option>Tarım danışmanı: randevu</option><option>Bina: elektronik ve teknik destek</option><option>Şehir: sanat ve buluşma</option>
+      </select></label>
+      <div class="ikili">
+        <label>Tercih ettiğin gün<input type="date" id="t-gun"></label>
+        <label>Saat aralığı<select id="t-saat"><option>Sabah</option><option>Öğle</option><option>Akşam</option></select></label>
+      </div>
+      <label>Notun<textarea id="t-not" maxlength="4000" placeholder="Kişisel bilgi eklemeden ihtiyacını anlat."></textarea></label>
+      <div class="dugmeler"><button type="submit" class="dugme ana">Taslağı hazırla</button><button type="button" class="dugme" id="t-indir">TXT indir</button></div>
+      <p id="t-durum" role="status" aria-live="polite"></p>
+      <label>Hazırlanan taslak<textarea id="t-sonuc" readonly></textarea></label>
+    </form>
+  </section>
+
+  <section class="bolum" id="iplik" aria-labelledby="iplik-baslik">
+    <p class="ust-not">Görüntüleme yöntemi</p>
+    <h2 id="iplik-baslik">Renk değil, iplik</h2>
+    <p>Bu sitede renk kodu yok, boya var. Her uçuşun izi altı liften bükülmüş bir iplik; her lif aynı bitkiden çıkan bir ton. Zemin harita değil, dimi örgülü bir kumaş: atkı ve çözgü sokak gibi okunur.</p>
+    <div class="boyalar" id="boyalar"></div>
+  </section>
+
+  <section class="bolum" id="halka" aria-labelledby="halka-baslik">
+    <p class="ust-not">Üst halka</p>
+    <h2 id="halka-baslik">Ataşehir merkezde, İstanbul halkada</h2>
+    <p>İç halka bina: üç blok, yaklaşık bin konut. Orta halka mahalle: Ataşehir şehir pilotu. Üst halka şehir: buradan uçulan her yer. Yönler ve mesafeler temsilidir, harita değildir; gerçek konum ve ölçü verisi bağlandığında aynı motor onları çizer.</p>
+  </section>
+</main>
+
+<footer class="alt-bilgi">
+  <p>BAŞKA İSTANBUL YOK · Harita karosu, uydu görüntüsü ve dış kütüphane kullanılmaz; sahne tarayıcıda üretilir.</p>
+  <p>Talep taslakları yalnız bu cihazda kalır.</p>
+</footer>
+</body>
+</html>
