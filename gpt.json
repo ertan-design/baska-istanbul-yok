@@ -1,0 +1,22 @@
+{
+ "ad": "Başka İstanbul Yok · Ataşehir'in üst halkası",
+ "amac": "Modern Ataşehir'e yeni taşınan birine şehrin üç yönünü bir uçuşla tanıtmak ve dört yaşam ihtiyacı için talep taslağı hazırlatmak.",
+ "sayfa_api": {
+  "nesne": "window.UCUS",
+  "HEDEF": "[{id, ad, alt, blok, boya}] — 0: A Blok → Watergarden, 1: B Blok → Finanskent, 2: C Blok → Maltepe sahil",
+  "cagrilar": {
+   "UCUS.ucusBasla(0|1|2)": "seçili bloktan uçuşu başlatır",
+   "UCUS.sifirla()": "başa döner",
+   "UCUS.kip()": "'sec' | 'uc' | 'vardi'"
+  },
+  "olay": "canvas#ucus3d üzerinde 'ucus-durum' {ad: hazir|basladi|halka|vardi|sec}"
+ },
+ "kullanici": ["atlayış düğmesi: uçuşu başlat", "ok tuşları, WASD ya da parmak: süzül", "halkadan geç: sayaç artar"],
+ "yasam_kapisi": {
+  "konular": ["Terzi: ölçü ve prova", "Tarım danışmanı: randevu", "Bina: elektronik ve teknik destek", "Şehir: sanat ve buluşma"],
+  "cikti": "TALEP TASLAĞI — GÖNDERİLMEDİ başlıklı düz metin; sunucuya gitmez",
+  "bagli_degil": ["müsaitlik takvimi", "randevu sistemi", "ödeme"]
+ },
+ "baglanti": {"terzi": "https://www.afair.studio/kumas/", "podyum": "https://www.afair.live/", "tarim": "https://www.tarim.online/", "bina": "https://www.xn--modernataehir-qtc.com/bina", "sehir": "https://www.xn--ataehirmodern-ktc.com/sehir"},
+ "sinirlar": ["yön ve mesafeler temsilidir, harita değildir", "harita karosu, uydu görüntüsü, dış kütüphane yok"]
+}
