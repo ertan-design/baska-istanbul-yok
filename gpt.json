@@ -17,6 +17,6 @@
   "cikti": "TALEP TASLAĞI — GÖNDERİLMEDİ başlıklı düz metin; sunucuya gitmez",
   "bagli_degil": ["müsaitlik takvimi", "randevu sistemi", "ödeme"]
  },
- "baglanti": {"terzi": "https://www.afair.studio/kumas/", "podyum": "https://www.afair.live/", "tarim": "https://www.tarim.online/", "bina": "https://www.xn--modernataehir-qtc.com/bina", "sehir": "https://www.xn--ataehirmodern-ktc.com/sehir"},
+ "baglanti": {"terzi": "https://www.afair.studio/dokun/", "podyum": "https://www.afair.live/", "tarim": "https://www.tarim.online/", "bina": "https://www.xn--modernataehir-qtc.com/bina", "sehir": "https://www.xn--ataehirmodern-ktc.com/sehir"},
  "sinirlar": ["yön ve mesafeler temsilidir, harita değildir", "harita karosu, uydu görüntüsü, dış kütüphane yok"]
 }
